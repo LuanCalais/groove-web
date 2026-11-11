@@ -1,19 +1,26 @@
 <template>
     <aside class="sidebar">
         <router-link to="/" class="logo">
-            <span class="logo-icon">♩</span>
+            <span class="logo-icon">
+                <HalfNote />
+            </span>
+
             <span class="logo-text">groove</span>
         </router-link>
 
         <nav class="nav">
             <router-link to="/" class="nav-item" exact-active-class="active">
-                <span class="ico">⌂</span><span class="lbl">Feed</span>
+                <span class="ico">
+                    <House :size="16" />
+                </span>
+                <span class="lbl">Feed</span>
             </router-link>
         </nav>
     </aside>
 </template>
 
 <script setup>
+import { HalfNote, House } from '@lucide/vue'
 
 </script>
 
@@ -60,7 +67,7 @@
 .side-btn {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     padding: 10px 12px;
     width: 100%;
     border-radius: var(--radius-sm);
@@ -82,9 +89,8 @@
 }
 
 .ico {
-    width: 20px;
-    text-align: center;
-    font-size: 18px;
+    display: flex;
+    align-items: center;
 }
 
 .bottom {
