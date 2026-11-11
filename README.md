@@ -1,5 +1,29 @@
-# Vue 3 + Vite
+# groove — frontend
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Vue 3 + Vite + Vue Router + Pinia + Axios. Tema claro/escuro com CSS variables.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Rodando
+
+```bash
+npm install
+cp .env.example .env
+npm run dev
+```
+
+Abre em http://localhost:5173. O backend precisa estar rodando em http://localhost:3000.
+
+## Estrutura
+
+```
+src/
+├── main.js            # entry point
+├── App.vue
+├── style.css          # tokens de cor (claro/escuro) + classes globais
+├── router/index.js    # rotas + guard de login
+├── stores/
+│   ├── auth.js        # login, registro, sessão (Pinia)
+│   └── theme.js       # alternar claro/escuro
+├── composables/api.js # instância do axios (injeta o JWT)
+├── components/        # AppLayout, AppSidebar, PostCard, PostComposer, AuthCard
+└── views/             # Home, Login, Register, Profile, User, Post
+```
